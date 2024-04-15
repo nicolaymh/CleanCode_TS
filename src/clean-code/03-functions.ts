@@ -23,7 +23,6 @@
         console.log({ id });
     }
 
-
     //////////////////////////////////////////////////////////////////////////////////*
     //////////////////////////////////////////////////////////////////////////////////*
 
@@ -49,7 +48,6 @@
     function getActorBioById( id: string ) {
         console.log({ id });
     }
-
 
     //////////////////////////////////////////////////////////////////////////////////*
     //////////////////////////////////////////////////////////////////////////////////*
@@ -104,6 +102,44 @@
 
         console.log('Create actor', birthdate);
         return true;
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////*
+    //////////////////////////////////////////////////////////////////////////////////*
+
+    const getPayAmount = ({ isDead = false, isSeparated = true, isRetired = false }) => {
+        let result;
+        if ( isDead ) {
+            result = 1500;
+        } else {
+            if ( isSeparated ) {
+                result = 2500;
+            } else {
+                if ( isRetired ) {
+                    result = 3000;
+                } else {
+                    result = 4000;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    // Better
+    interface User {
+        isDead: boolean,
+        isSeparated: boolean,
+        isRetired: boolean
+    }
+
+    const calculatePayAmount = ({ isDead, isSeparated, isRetired }: User): number => {
+
+        if( isDead ) 1500;
+
+        if( isSeparated ) 2500;
+
+        return isRetired ? 3000 : 4000;
     }
 
 })();
