@@ -1,6 +1,7 @@
 import './style.css'
 // import "./clean-code/07-practice-classes-SRP";
-import "./code-smells/02-low-coupling";
+// import "./code-smells/02-low-coupling";
+import "./solid/01-srp.solution"
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
