@@ -1,4 +1,6 @@
 
+//////////////////////////////////////////////////*
+//////////////////////////////////////////////////*
 
 //! Applying LSP.
 
@@ -7,6 +9,8 @@ export abstract class Vehicle {
     abstract getNumberOfSeats(): number;
 }
 
+//////////////////////////////////////////////////*
+//////////////////////////////////////////////////*
 
 export class Tesla extends Vehicle {
 
@@ -19,6 +23,7 @@ export class Tesla extends Vehicle {
     }
 }
 
+//////////////////////////////////////////////////*
 export class Audi extends Vehicle {
 
     constructor( private numberOfSeats: number ) {
@@ -29,7 +34,7 @@ export class Audi extends Vehicle {
         return this.numberOfSeats;
     }
 }
-
+//////////////////////////////////////////////////*
 export class Toyota extends Vehicle {
 
     constructor( private numberOfSeats: number ) {
@@ -40,7 +45,7 @@ export class Toyota extends Vehicle {
         return this.numberOfSeats;
     }
 }
-
+//////////////////////////////////////////////////*
 export class Honda extends Vehicle {
 
     constructor( private numberOfSeats: number ) {
@@ -51,7 +56,7 @@ export class Honda extends Vehicle {
         return this.numberOfSeats;
     }
 }
-
+//////////////////////////////////////////////////*
 export class Volvo extends Vehicle {
 
     constructor( private numberOfSeats: number ) {
@@ -62,7 +67,7 @@ export class Volvo extends Vehicle {
         return this.numberOfSeats;
     }
 }
-
+//////////////////////////////////////////////////*
 export class Ford extends Vehicle {
 
     constructor( private numberOfSeats: number ) {
@@ -73,6 +78,7 @@ export class Ford extends Vehicle {
         return this.numberOfSeats;
     }
 }
+//////////////////////////////////////////////////*
 
 /*
 
