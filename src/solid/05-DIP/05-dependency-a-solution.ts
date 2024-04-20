@@ -1,4 +1,4 @@
-import { PostService } from './05-dependency-b copy';
+import { PostService } from './05-dependency-b-solution';
 import { JsonDataBaseService } from './05-dependency-c-solution';
 
 
