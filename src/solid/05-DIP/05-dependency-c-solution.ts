@@ -1,11 +1,28 @@
 import localPost from "../../data/local-database.json"
+import { Post } from "./05-dependency-b-solution";
+
+//////////////////////////////////////////////////////////////////*
+//////////////////////////////////////////////////////////////////*
+//! Applying principle LSP
+
+export abstract class PostProvider {
+
+    abstract getPosts(): Promise<Post[]>;
+
+}
+//////////////////////////////////////////////////////////////////*
+//////////////////////////////////////////////////////////////////*
 
 
-export class LocalDataBaseService {
+//////////////////////////////////////////////////////////////////*
+//////////////////////////////////////////////////////////////////*
+//! DataBaseServices.
+
+export class LocalDataBaseService implements PostProvider {
 
     constructor() {}
 
-    async getFakePosts() {
+    async getPosts() {
         return [
             {
                 'userId': 1,
@@ -23,12 +40,30 @@ export class LocalDataBaseService {
 
 }
 
-export class JsonDataBaseService {
+//////////////////////////////////////////////////////////////////*
+
+export class JsonDataBaseService implements PostProvider {
 
     async getPosts() {
         return localPost;
     }
 }
+
+//////////////////////////////////////////////////////////////////*
+
+export class WebApiPostService implements PostProvider {
+
+    async getPosts() {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const data = await response.json();
+
+        return data
+    }
+
+}
+
+//////////////////////////////////////////////////////////////////*
+
 
 
 

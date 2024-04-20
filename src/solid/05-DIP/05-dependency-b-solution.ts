@@ -1,22 +1,27 @@
-import { LocalDataBaseService } from "./05-dependency-c-solution";
+import { PostProvider } from './05-dependency-c-solution';
 
-interface Post {
+//! Model.
+export interface Post {
     body:   string;
     id:     number;
     title:  string;
     userId: number;
 }
 
+//////////////////////////////////////////////////////////*
+//////////////////////////////////////////////////////////*
 
+//! Applying Dependency Inversion Principle - DIP.
 export class PostService {
 
     private posts: Post[] = [];
 
-    constructor() {}
+    //* Dependency Injection.
+    constructor( private postProvider: PostProvider ) {}
 
     async getPosts() {
-        const jsonDB = new LocalDataBaseService();
-        this.posts = await jsonDB.getFakePosts();
+
+        this.posts = await this.postProvider.getPosts();
 
         return this.posts;
     }
