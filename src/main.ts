@@ -2,7 +2,7 @@ import './style.css'
 // import "./clean-code/07-practice-classes-SRP";
 // import "./code-smells/02-low-coupling";
 // import "./solid/01-srp.solution"
-import "./solid/03-liskov-a-solution"
+import "./solid/05-DIP/05-dependency-a"
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
