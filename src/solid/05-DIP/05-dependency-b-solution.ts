@@ -1,4 +1,4 @@
-import { LocalDataBaseService } from "./05-dependency-c";
+import { LocalDataBaseService } from "./05-dependency-c-solution";
 
 interface Post {
     body:   string;
