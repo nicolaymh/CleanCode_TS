@@ -19,7 +19,6 @@ import { LocalDataBaseService, JsonDataBaseService, WebApiPostService } from './
 
 })();
 
-
 /*
 
 ! Applying DIP & LSP.
